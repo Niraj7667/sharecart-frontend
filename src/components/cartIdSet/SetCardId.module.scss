@@ -1,0 +1,66 @@
+// SetCardId.module.scss
+
+$primary-color: #4a90e2;
+$secondary-color: #f5f5f5;
+$hover-color: darken($primary-color, 10%);
+$text-color: #333;
+$font-family: 'Arial', sans-serif;
+
+.container {
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: $secondary-color;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  font-family: $font-family;
+  color: $text-color;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  margin: 10px 0;
+  text-align: center;
+
+  button {
+    background-color: $primary-color;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+
+    &:hover {
+      background-color: $hover-color;
+      transform: scale(1.05);
+    }
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 5px $primary-color;
+    }
+  }
+}
+
+// Responsive Design
+@media (max-width: 600px) {
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  button {
+    width: 100%;
+    font-size: 14px;
+  }
+}

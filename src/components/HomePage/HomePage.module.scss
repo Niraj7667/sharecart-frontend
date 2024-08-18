@@ -1,0 +1,188 @@
+.mainContainer {
+    max-width: 100%;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/* Products.module.scss */
+.productContainer {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(200px, 1fr)); /* Base grid setup */
+    gap: 16px; /* Adjust the gap between cards as needed */
+    // padding: 20px;
+    margin: 0%;
+    padding-top: 4rem;
+  }
+  
+  @media (min-width: 800px) {
+    .productContainer {
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Allows up to 4 columns */
+    }
+  }
+  
+  @media (min-width: 1200px) {
+    .productContainer {
+      grid-template-columns: repeat(3, 1fr); /* Max 4 items per row */
+    }
+  }
+  
+  
+  .mainItemContainer {
+    width: 20rem;  // Or any other value
+    height: auto;  // Let height be determined by the content
+    overflow: hidden;
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+    .imageItemContainer {
+        width: 100%;
+        height: auto;
+        img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;  // Or 'contain', depending on the effect you want
+        }
+    }
+    .buttonsItemContainer{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+        margin-top: 1rem;
+        .addToSharedCart{
+            height: 2.5rem;
+            width: 7rem;
+            background-color: #0071ce;
+            border-radius: 4rem;
+            color: white;
+            display: flex;
+            align-items: center;
+            padding-left: 1rem;
+            box-shadow: 0px 4px;
+            //add hover effect for button
+            &:hover{
+                background-color: #005a9e;
+                cursor: pointer;
+            }
+           
+            p{
+                margin: 0;
+                padding: none;
+                word-spacing: -1px;
+                line-height: 16px;
+                font-size: 0.9rem;
+            }
+        }
+    }
+.productContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2rem;
+    width: 100%;
+}
+
+.mainItemContainer {
+    flex: 1 1 calc(33.333% - 2rem); /* Makes each product take up one-third of the row */
+    max-width: calc(33.333% - 2rem);
+    height: 35rem;
+    overflow: hidden;
+    margin: 1rem 0; /* Vertical margin only */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    transition: transform 0.3s ease;
+
+    &:hover {
+        transform: scale(1.05);
+    }
+}
+
+.imageItemContainer {
+    width: 100%;
+    height: 18rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-bottom: 1px solid #ddd;
+    
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain; /* Ensures the entire image is visible, fitting within the container */
+    }
+}
+
+.buttonsItemContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 90%;
+    margin-top: 1rem;
+
+    .addToCart,
+    .addToSharedCart {
+        width: 7rem;
+        background-color: #0071ce;
+        border-radius: 4rem;
+        color: white;
+        display: flex;
+        align-items: center;
+        padding-left: 1rem;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        transition: background-color 0.3s ease;
+
+        &:hover {
+            background-color: #0071ce;
+            cursor: pointer;
+        }
+
+        p {
+            margin: 0;
+            word-spacing: -1px;
+            line-height: 16px;
+            font-size: 0.9rem;
+        }
+
+        .plus_icon {
+            margin-right: 0.3rem;
+        }
+    }
+}
+
+.price {
+    width: 100%;
+    
+    p {
+        margin-top: 1rem;
+        font-size: 1.5rem;
+        font-weight: 800;
+        text-align: left;
+        padding-left: 1rem;
+        margin-bottom: 0;
+    }
+}
+
+.description {
+    p {
+        font-size: 1.5rem;
+        text-align: start;
+        padding-left: 1rem;
+        margin-top: 0.5rem;
+        margin-bottom: 1rem;
+    }
+}
+.sharedCartText {
+    color: white;
+    font-weight: 400;
+}

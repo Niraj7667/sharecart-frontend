@@ -1,0 +1,99 @@
+.sharedCartContainer {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: #f4f7f9; // Light background color
+    padding: 2rem;
+    box-sizing: border-box;
+
+    h2 {
+        margin-top: 1rem;
+        font-size: 2rem;
+        color: #333;
+    }
+
+    button {
+        background-color: #007bff;
+        color: white;
+        padding: 0.75rem 1.5rem;
+        border: none;
+        border-radius: 5px;
+        font-size: 1rem;
+        cursor: pointer;
+        margin-top: 1rem;
+        transition: background-color 0.3s ease;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+
+        &:hover {
+            background-color: #0056b3;
+        }
+    }
+
+    .invitationSection {
+        margin-top: 2rem;
+        padding: 1.5rem;
+        background-color: #ffffff;
+        border-radius: 8px;
+        box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 500px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        p {
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
+            color: #333;
+        }
+
+        input {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 1rem;
+            font-size: 1rem;
+            color: #555;
+            background-color: #f8f9fa;
+            text-align: center;
+        }
+
+        button {
+            width: 100%;
+            background-color: #28a745;
+            margin-top: 0;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+
+            &:hover {
+                background-color: #218838;
+            }
+        }
+    }
+
+    .error {
+        margin-top: 1rem;
+        color: #e74c3c;
+        font-size: 1rem;
+        background-color: #fdecea;
+        padding: 0.5rem 1rem;
+        border-radius: 5px;
+        width: 100%;
+        max-width: 500px;
+        text-align: center;
+    }
+
+    .joinCartButton {
+        background-color: #ffc107;
+        color: #333;
+        margin-top: 2rem;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+
+        &:hover {
+            background-color: #e0a800;
+        }
+    }
+}

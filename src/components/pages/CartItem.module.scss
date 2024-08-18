@@ -1,0 +1,217 @@
+.heading{
+    font-size:xx-large;
+}
+.width {
+    width: 200px; /* Adjust the width as needed */
+  }
+
+.productName{
+    font-weight: 700;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}  
+.cartItem{
+    padding: 1rem;
+    //@include flex(row, flex-start, center, 3rem);
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 3rem;
+    > img{
+        width: 10rem;   
+        height: 10rem;
+        object-fit: contain;
+    }
+
+    > article {
+        // @include flex(column,center, flex-start, 0.25rem);
+        display: flex;
+        text-align: justify;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 0.25rem;
+        
+
+        span {
+            font-weight: 500;
+        }
+    }
+
+    > div {
+        margin-left: auto;
+        // @include flex;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        button {
+            border: none;
+            //@include square(2rem);
+            width: 2rem;
+            height: 2rem;
+            border-radius: 0.5rem;
+            // @include flex;
+            display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+            cursor: pointer;
+            font-size: 1.2rem;
+            &:hover {
+                background-color: rgb(233, 233, 233);
+                color: blue;
+            }
+        } 
+    }
+
+    > button {
+        border: none;
+        background-color: transparent;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        font-size: 1.2rem;
+
+        &:hover {
+            color: red;
+        }
+    }
+
+    .star-rating {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: flex-end;
+      }
+      
+      .radio-input {
+        position: fixed;
+        opacity: 0;
+        pointer-events: none;
+      }
+      
+      .radio-label {
+        cursor: pointer;
+        font-size: 0;
+        color: rgba(0,0,0,0.2);
+        transition: color 0.1s ease-in-out;
+      }
+      
+      .radio-label:before {
+        content: "★";
+        display: inline-block;
+        font-size: 32px;
+      }
+      
+      .radio-input:checked ~ .radio-label {
+        color: #ffc700;
+        color: gold;
+      }
+      
+      .radio-label:hover,
+      .radio-label:hover ~ .radio-label {
+        color: goldenrod;
+      }
+      
+      .radio-input:checked + .radio-label:hover,
+      .radio-input:checked + .radio-label:hover ~ .radio-label,
+      .radio-input:checked ~ .radio-label:hover,
+      .radio-input:checked ~ .radio-label:hover ~ .radio-label,
+      .radio-label:hover ~ .radio-input:checked ~ .radio-label {
+        color: darkgoldenrod;
+      }
+      
+      
+      .average-rating {
+        position: relative;
+        appearance: none;
+        color: transparent;
+        width: auto;
+        display: inline-block;
+        vertical-align: baseline;
+        font-size: 25px;
+      }
+      
+      .average-rating::before {
+        --percent: calc(4.3/5*100%);
+        content: '★★★★★';
+        position: absolute;
+        top: 0;
+        left: 0;
+        color: rgba(0,0,0,0.2);
+        background: linear-gradient(90deg, gold var(--percent), rgba(0,0,0,0.2) var(--percent));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+}
+
+.calcSection {
+    width: 35%;
+    padding: 4rem;
+    // @include flex(column, center, stretch, 1.5rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    gap: 1.5rem;
+
+    > input {
+        padding : 1rem;
+        border: 0.1rem solid rgba(0,0,0,0.25);
+        // outline: none; (If you want that after clicking on input, outline shouldn't be dark, then, use this line.)
+        border-radius: 0.5rem;
+        margin-top: 2rem;
+    }
+
+    > p {
+        font-size: 1.1rem;
+    }
+    
+    > a {
+        background-color: blue;
+        padding: 1rem;
+        text-decoration: none;
+        color: white;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1rem;
+        border-radius: 0.2rem;
+
+        &:hover {
+            background-color: blue;
+            transition: 0.5s ;
+        }
+    }
+    > span {
+        margin-top: -1rem;
+        // @include flex(row, center, center, 0.5rem);
+        text-align: center;
+        font-size: 1rem;
+        > code {
+            font-weight: 700;
+            // align-self: flex-end;
+        }
+    }
+
+    > button {
+        border: none;
+        margin-top: 3rem;
+        background-color: transparent;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        font-size: 1.2rem;
+    }
+}
+
+

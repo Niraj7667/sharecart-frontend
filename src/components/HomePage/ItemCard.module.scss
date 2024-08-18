@@ -1,0 +1,87 @@
+.mainItemContainer {
+    height: 30rem;
+    width: 20rem;
+    overflow: hidden;
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .imageContainer {
+        max-width: 30rem;
+        max-height: 30rem;
+        img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            max-width: 18rem;
+            max-height: 18rem;
+        }
+    }
+
+    .buttonsItemContainer {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+        margin-top: 1rem;
+
+        .addToSharedCart,
+        .addToCart {
+            width: 7rem;
+            height: 2.5rem;
+            background-color: #0071ce;
+            border-radius: 4rem;
+            color: white;
+            display: flex;
+            align-items: center;
+            padding-left: 1rem;
+            box-shadow: 0px 4px;
+            transition: background-color 0.3s ease;
+
+            &:hover {
+                background-color: #005a9e;
+                cursor: pointer;
+            }
+
+            p {
+                margin: 0;
+                line-height: 16px;
+                font-size: 0.9rem;
+                word-spacing: -1px;
+            }
+        }
+
+        .addToCart .plus_icon {
+            margin-right: 0.3rem;
+        }
+    }
+
+    .price {
+        width: 100%;
+        margin-top: 3rem;
+
+        p {
+            font-size: 1.5rem;
+            font-weight: 800;
+            text-align: left;
+            padding-left: 1rem;
+            margin-bottom: 0;
+        }
+    }
+
+    .description {
+        p {
+            font-size: 1.5rem;
+            text-align: start;
+            padding-left: 1rem;
+            margin: 0;
+        }
+    }
+
+    .sharedCartText {
+        color: white;
+        font-weight: 400;
+    }
+}

@@ -1,0 +1,99 @@
+.mainContainer{
+    height: 30rem;
+    width: 20rem;
+    overflow: hidden;
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    .imageContainer{
+        max-width: 18rem;
+        max-height: 18rem;
+        img{
+            max-width: 18rem;
+        }
+    
+    }
+    .buttonsContainer{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+        margin-top: 1rem;
+        .addToSharedCart{
+            height: 2.5rem;
+            width: 7rem;
+            background-color: #0071ce;
+            border-radius: 4rem;
+            color: white;
+            display: flex;
+            align-items: center;
+            padding-left: 1rem;
+            box-shadow: 0px 4px;
+            //add hover effect for button
+            &:hover{
+                background-color: #005a9e;
+                cursor: pointer;
+            }
+           
+            p{
+                margin: 0;
+                padding: none;
+                word-spacing: -1px;
+                line-height: 16px;
+                font-size: 0.9rem;
+            }
+        }
+
+        .addToCart{
+            width: 7rem;
+            background-color: #0071ce;
+            border-radius: 4rem;
+            color: white;
+            display: flex;
+            align-items: center;
+            padding-left: 1rem;
+            box-shadow: 0px 4px;
+            //add hover effect for button
+            &:hover{
+                background-color: #005a9e;
+                cursor: pointer;
+            }
+            p{
+                margin: 0;
+                padding: none;
+                word-spacing: -1px;
+                line-height: 16px;
+                font-size: 0.9rem;
+            }
+            .plus_icon{
+                margin-right: 0.3rem;
+            
+            }
+        }
+    }
+    .price{
+        width: 100%;
+        p{
+            height: 0rem;
+            margin-top: 3rem;
+            font-size: 1.5rem;
+            text-decoration: solid;
+            font-weight: 800;
+            text-align: left;
+            padding-left: 1rem;
+            margin-bottom: none;
+        }
+    }
+    .description{
+        p{
+            font-size: 1.5rem;
+            text-decoration: solid;
+            text-align: left;
+            padding-left: 1rem;
+            margin: none;
+        }
+    }
+}
+

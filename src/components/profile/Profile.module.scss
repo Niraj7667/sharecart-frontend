@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap');
+
+* {
+  font-family: 'DM Sans', sans-serif;
+}
+
+.profile_1, .profile_2 {
+  position: relative;
+  display: inline-block;
+}
+
+.profile_2 {
+  cursor: pointer;
+}
+
+.items_Button {
+  background-color: #f3f4f6;
+  border: none;
+  padding: 10px 10px;
+  display: flex;
+  align-items: center;
+  border-radius: 25px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+}
+
+.items_Button:hover {
+  background-color: #c0c6cb;
+}
+
+.icon {
+  font-size: 1.5rem;
+  color: #0073e6;
+  margin-right: 10px;
+}
+
+.reorder {
+  font-weight: bold;
+  font-size: 1rem;
+  color: #333;
+}
+
+.dropdownMenu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  margin-top: 10px;
+}
+
+.dropdownItem {
+  display: block;
+  padding: 10px 20px;
+  color: #333;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease;
+}
+
+.dropdownItem:hover {
+  background-color: #f3f4f6;
+}
+
+.dropdownItem:not(:last-child) {
+  border-bottom: 1px solid #ddd;
+}
+
+.navbar-item {
+  display: block;
+  padding: 8px 16px;
+  color: #333;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease;
+  margin-right: 20px; /* Add margin to space out navbar items */
+}
+
+.navbar-item:hover {
+  background-color: #f3f4f6;
+}
+
+.navbar-divider {
+  margin: 0;
+  border-top: 1px solid #ddd;
+}
+
+.navbar-dropdown {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  top: 100%;
+  right: 0;
+  z-index: 1000;
+}
+
+img {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  margin-right: 10px;
+}
+
+.navbar-items {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-items > * {
+  margin-right: 20px; /* Ensure all items have adequate spacing */
+}
