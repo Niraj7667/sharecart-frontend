@@ -13,7 +13,7 @@ const Profile = () => {
     const navigate = useNavigate(); // Use navigate for redirection
 
     useEffect(() => {
-        axios.get('/api/auth/check', { withCredentials: true })
+        axios.get('https://sharecart-backend.vercel.app/api/auth/check', { withCredentials: true })
             .then(response => {
                 if (response.data.user) {
                     setnavbarUserIsLogged(true);
