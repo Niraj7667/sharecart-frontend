@@ -13,7 +13,7 @@ const SharedCart = () => {
   useEffect(() => {
     const fetchUser = async () => {
       try {
-        const response = await fetch('/api/auth/check', {
+        const response = await fetch('https://sharecart-backend.vercel.app/api/auth/check', {
           method: 'GET',
           credentials: 'include', // Include cookies in the request
         });
@@ -36,7 +36,7 @@ const SharedCart = () => {
   // Create cart with invitation link
   const handleCreateCart = async () => {
     try {
-      const response = await axios.post('/api/cart/create', { name: username }, { withCredentials: true });
+      const response = await axios.post('https://sharecart-backend.vercel.app/api/cart/create', { name: username }, { withCredentials: true });
 
       // Store the cartId in localStorage
       localStorage.setItem('currentCartId', response.data.cartId);
