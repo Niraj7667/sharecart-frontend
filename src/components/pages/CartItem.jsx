@@ -6,7 +6,7 @@ const CartItem = ({ price, name, productId, cartId, rating, numRatings, addedBy,
   const [quantity, setQuantity] = useState(1); 
   const handleDelete = async () => {
     try {
-      await axios.delete(`/api/cart/${cartId}/remove-product/${productId}`, { withCredentials: true });
+      await axios.delete(`https://sharecart-backend.vercel.app/api/cart/${cartId}/remove-product/${productId}`, { withCredentials: true });
       alert('Product removed from cart');
       onProductRemove(productId);  // Notify parent component about the removal
     } catch (err) {
