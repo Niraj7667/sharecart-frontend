@@ -17,7 +17,7 @@ const HomePage = () => {
 
   useEffect(() => {
     const fetchProducts = async () => {
-        const response = await axios.get('/api/cart/products'); // Fetch products from backend
+        const response = await axios.get('https://sharecart-backend.vercel.app/api/cart/products'); // Fetch products from backend
         setProducts(response.data);
     };
     fetchProducts();
