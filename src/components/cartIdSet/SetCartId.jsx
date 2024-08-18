@@ -11,7 +11,7 @@ const SetCardId = () => {
   useEffect(() => {
     const fetchJoinedCarts = async () => {
       try {
-        const response = await axios.get(`/api/cart/joinedcarts`);
+        const response = await axios.get(`https://sharecart-backend.vercel.app/api/cart/joinedcarts`);
         setJoinedCarts(response.data);
         console.log(response);
       } catch (err) {
