@@ -16,10 +16,11 @@ import HomePage from './components/HomePage/HomePage.jsx';
  import SharedCartPage from './components/pages/SharedCartPage.jsx';
  import SetCardId from './components/cartIdSet/SetCartId.jsx';
 const router = createBrowserRouter([
+  { path: "/login", element: <Login />},
   { path: "/",element: <App />,},
   { path: "/cards", element: <ItemCard/>},
   { path: "/profile", element: <Profile/>},
-  { path: "/login", element: <Login />},
+  
   { path: "/signup", element: <Signup/>},
   { path: "/logout", element: <Logout/>},
   { path: "/sharedcart", element: <SharedCart/>},
