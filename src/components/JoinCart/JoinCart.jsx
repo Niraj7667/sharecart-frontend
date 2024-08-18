@@ -12,7 +12,7 @@ const JoinCart = () => {
 
     try {
       const response = await axios.post(
-        '/api/cart/join', 
+        'https://sharecart-backend.vercel.app/api/cart/join', 
         { invitationLink }, 
         { withCredentials: true }
       );
