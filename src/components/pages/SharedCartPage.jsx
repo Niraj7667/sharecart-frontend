@@ -14,7 +14,7 @@ const SharedCartPage = () => {
   useEffect(() => {
     const fetchSharedCartProducts = async () => {
       try {
-        const response = await axios.get(`/api/cart/${cartId}/products`);
+        const response = await axios.get(`https://sharecart-backend.vercel.app/api/cart/${cartId}/products`);
         const initialQuantities = response.data.reduce((acc, item) => {
           acc[item.productId] = 1; // Default quantity is 1
           return acc;
