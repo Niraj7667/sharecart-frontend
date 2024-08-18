@@ -25,7 +25,7 @@ const HomePage = () => {
 
   const addToCart = async (productId) => {
     try {
-      await axios.post('/api/cart/add-product', { productId }, { withCredentials: true });
+      await axios.post('https://sharecart-backend.vercel.app/api/cart/add-product', { productId }, { withCredentials: true });
       alert('Product added to cart');
     } catch (err) {
       console.error('Error adding product to cart:', err);
@@ -34,7 +34,7 @@ const HomePage = () => {
 
   const addToSharedCart = async (productId, cartId) => {
     try {
-      await axios.post(`/api/cart/${cartId}/add-product`, { productId }, { withCredentials: true });
+      await axios.post(`https://sharecart-backend.vercel.app/api/cart/${cartId}/add-product`, { productId }, { withCredentials: true });
       alert('Product added to shared cart');
     } catch (err) {
       console.error('Error adding product to shared cart:', err);
