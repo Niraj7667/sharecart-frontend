@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 const logout = async () => {
     try {
         // Make a request to the backend to clear the cookie
-        await axios.post('/api/auth/logout', {}, { withCredentials: true });
+        await axios.post('https://sharecart-backend.vercel.app/api/auth/logout', {}, { withCredentials: true });
 
         // Clear the entire contents of localStorage
         localStorage.clear();
