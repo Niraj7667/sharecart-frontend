@@ -16,7 +16,7 @@ const Signup = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.post('/api/auth/signup', { username, email, password }, { withCredentials: true });
+      const response = await axios.post('https://sharecart-backend.vercel.app/api/auth/signup', { username, email, password }, { withCredentials: true });
       if (response.data.message === 'User signed up successfully') {
         console.log('Signup successful');
         localStorage.setItem('token', response.data.token);
