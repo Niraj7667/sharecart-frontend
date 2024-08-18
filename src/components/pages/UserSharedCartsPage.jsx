@@ -19,7 +19,7 @@ const UserSharedCartsPage = () => {
           const userId = decodedToken.userId;
 
           // Fetch shared carts using the userId
-          const response = await axios.get(`/api/user/${userId}/shared-carts`);
+          const response = await axios.get(`https://sharecart-backend.vercel.app/api/user/${userId}/shared-carts`);
           setSharedCarts(response.data);
         } else {
           setError('User not authenticated');
