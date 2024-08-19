@@ -11,10 +11,20 @@ const SharedCartPage = () => {
   const [error, setError] = useState(null);
   const cartId = localStorage.getItem('currentCartId');
 
+  // Function to retrieve the token from local storage
+  const getToken = () => {
+    return localStorage.getItem('token'); // Use the correct token key
+  };
+
   useEffect(() => {
     const fetchSharedCartProducts = async () => {
       try {
-        const response = await axios.get(`https://sharecart-backend.vercel.app/api/cart/${cartId}/products`);
+        const token = getToken();
+        const response = await axios.get(`https://sharecart-backend.vercel.app/api/cart/${cartId}/products`, {
+          headers: {
+            'Authorization': `Bearer ${token}`,
+          },
+        });
         const initialQuantities = response.data.reduce((acc, item) => {
           acc[item.productId] = 1; // Default quantity is 1
           return acc;
