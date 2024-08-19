@@ -6,9 +6,9 @@ export default defineConfig({
   server: {
     proxy: {
       // '/api':  'http://localhost:3000',
-      '/api';  'https://sharecart-backend.vercel.app',
+      '/api':  'https://sharecart-backend.vercel.app',
       },
     historyApiFallback: true,
     },
-  plugins; [react()],
+  plugins: [react()],
 });
