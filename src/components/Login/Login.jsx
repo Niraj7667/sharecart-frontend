@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import axios from 'axios';
-import './login.css';
 import { useNavigate } from 'react-router-dom';
+import './login.css';
 
 const Login = () => {
   const [username, setUsername] = useState('');
@@ -14,21 +13,30 @@ const Login = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.post('https://sharecart-backend.vercel.app/api/auth/login', 
-        { username, email, password }, 
-        { withCredentials: true });
-      
-      if (response.data.message === 'Login successful') {
-        console.log('Login successful');
-        localStorage.setItem('token', response.data.token);
+      const response = await fetch('https://sharecart-backend.vercel.app/api/auth/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        credentials: 'include', // Include credentials (cookies) in the request
+        body: JSON.stringify({ username, email, password }),
+      });
 
-        if (response.data.cartId) {
-          localStorage.setItem('currentCartId', response.data.cartId);
+      const data = await response.json();
+
+      if (response.ok && data.message === 'Login successful') {
+        console.log('Login successful');
+        localStorage.setItem('token', data.token);
+
+        if (data.cartId) {
+          localStorage.setItem('currentCartId', data.cartId);
         }
         navigate('/'); 
+      } else {
+        setError(data.message || 'An error occurred');
       }
     } catch (err) {
-      setError(err.response?.data?.message || 'An error occurred');
+      setError('An error occurred');
     }
   };
 
