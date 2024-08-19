@@ -1,29 +1,29 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom'; // Import useNavigate
+import { useNavigate } from 'react-router-dom';
 import styles from './CreateSharedCart.module.scss';
 import Navbar from '../navbar/Navbar';
+
 const SharedCart = () => {
   const [username, setUsername] = useState('');
   const [invitationLink, setInvitationLink] = useState('');
   const [error, setError] = useState('');
-  const navigate = useNavigate(); // Use navigate for redirection
+  const navigate = useNavigate();
 
   // Fetch user details on component mount
   useEffect(() => {
     const fetchUser = async () => {
       try {
-        const response = await fetch('https://sharecart-backend.vercel.app/api/auth/check', {
-          method: 'GET',
-          credentials: 'include', // Include cookies in the request
+        const token = localStorage.getItem('token'); // Retrieve the token from localStorage
+
+        const response = await axios.get('https://sharecart-backend.vercel.app/api/auth/check', {
+          headers: {
+            'Authorization': `Bearer ${token}`, // Include the token in the Authorization header
+          },
+          withCredentials: true,
         });
 
-        if (!response.ok) {
-          throw new Error('Failed to fetch user details');
-        }
-
-        const data = await response.json();
-        setUsername(data.user.name);
+        setUsername(response.data.user.name);
       } catch (err) {
         setError('Error fetching user details');
         console.error(err);
@@ -36,7 +36,17 @@ const SharedCart = () => {
   // Create cart with invitation link
   const handleCreateCart = async () => {
     try {
-      const response = await axios.post('https://sharecart-backend.vercel.app/api/cart/create', { name: username }, { withCredentials: true });
+      const token = localStorage.getItem('token'); // Retrieve the token from localStorage
+
+      const response = await axios.post('https://sharecart-backend.vercel.app/api/cart/create', 
+        { name: username }, 
+        {
+          headers: {
+            'Authorization': `Bearer ${token}`, // Include the token in the Authorization header
+          },
+          withCredentials: true,
+        }
+      );
 
       // Store the cartId in localStorage
       localStorage.setItem('currentCartId', response.data.cartId);
@@ -56,7 +66,7 @@ const SharedCart = () => {
 
   // Redirect to joinCart page
   const handleJoinCart = () => {
-    navigate('/joinCart'); // Redirect to /joinCart page
+    navigate('/joinCart');
   };
 
   return (
@@ -72,7 +82,7 @@ const SharedCart = () => {
         </div>
       )}
       {error && <div className={styles.error}>{error}</div>}
-      <button onClick={handleJoinCart} className={styles.joinCartButton}>Have a Link?</button> {/* New button */}
+      <button onClick={handleJoinCart} className={styles.joinCartButton}>Have a Link?</button>
     </div>
   );
 };
