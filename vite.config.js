@@ -8,6 +8,7 @@ export default defineConfig({
       // '/api':  'http://localhost:3000',
       '/api':  'https://sharecart-backend.vercel.app',
       },
+    historyApiFallback: true,
     },
   plugins: [react()],
 });
