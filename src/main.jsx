@@ -2,7 +2,9 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import './index.css'
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import {
+  createBrowserRouter,RouterProvider
+} from "react-router-dom";
 import ItemCard from './components/item-card/ItemCard.jsx'
 import Profile from './components/profile/Profile.jsx';
 import Login from './components/Login/Login.jsx';
