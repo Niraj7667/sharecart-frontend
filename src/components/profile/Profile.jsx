@@ -10,19 +10,26 @@ const Profile = () => {
     const [username, setUsername] = useState('');
     const [dropdownOpen, setDropdownOpen] = useState(false);
     const dropdownRef = useRef(null);
-    const navigate = useNavigate(); // Use navigate for redirection
+    const navigate = useNavigate();
 
     useEffect(() => {
-        axios.get('https://sharecart-backend.vercel.app/api/auth/check', { withCredentials: true })
-            .then(response => {
-                if (response.data.user) {
-                    setnavbarUserIsLogged(true);
-                    setUsername(response.data.user.name);
-                }
-            })
-            .catch(error => {
-                console.log('Not authenticated', error);
-            });
+        const token = localStorage.getItem('token'); // Retrieve token from localStorage
+
+        axios.get('https://sharecart-backend.vercel.app/api/auth/check', {
+            headers: { 
+                Authorization: `Bearer ${token}` // Pass the token in the Authorization header
+            },
+            withCredentials: true // Include credentials (cookies) if needed
+        })
+        .then(response => {
+            if (response.data.user) {
+                setnavbarUserIsLogged(true);
+                setUsername(response.data.user.name);
+            }
+        })
+        .catch(error => {
+            console.log('Not authenticated', error);
+        });
 
         const handleClickOutside = (event) => {
             if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
@@ -43,10 +50,15 @@ const Profile = () => {
 
     const handleLogout = async () => {
         try {
-            await axios.post('/api/auth/logout', {}, { withCredentials: true });
+            const token = localStorage.getItem('token'); // Retrieve token again for logout
+            await axios.post('/api/auth/logout', {}, {
+                headers: { 
+                    Authorization: `Bearer ${token}`
+                },
+                withCredentials: true
+            });
             localStorage.removeItem('token');
             localStorage.removeItem('currentCartId');
-            // Refresh the page to reset the state
             window.location.reload();
         } catch (error) {
             console.error('Error during logout:', error.message || 'An error occurred');
