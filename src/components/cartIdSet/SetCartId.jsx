@@ -39,10 +39,18 @@ const SetCardId = () => {
     navigate('/carted');
   };
 
+  const handleNavigateToSharedCart = () => {
+    // Redirect to the /sharedcart route
+    navigate('/sharedcart');
+  };
+
   return (
     <div className={styles.container}>
       <Navbar />
       <h2>Your Joined Carts</h2>
+      <button onClick={handleNavigateToSharedCart} className={styles.sharedCartButton}>
+        Join or Create a Shared Cart
+      </button>
       <ul>
         {joinedCarts.map(cart => (
           <li key={cart.cartId}>
