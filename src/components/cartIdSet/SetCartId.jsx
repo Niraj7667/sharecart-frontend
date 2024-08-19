@@ -8,10 +8,21 @@ const SetCardId = () => {
   const [joinedCarts, setJoinedCarts] = useState([]);
   const navigate = useNavigate(); // Hook for navigation
 
+  // Function to retrieve the token from local storage
+  const getToken = () => {
+    return localStorage.getItem('token'); // Use the correct token key
+  };
+
   useEffect(() => {
     const fetchJoinedCarts = async () => {
       try {
-        const response = await axios.get(`https://sharecart-backend.vercel.app/api/cart/joinedcarts`);
+        const token = getToken();
+        const response = await axios.get('https://sharecart-backend.vercel.app/api/cart/joinedcarts', {
+          headers: {
+            'Authorization': `Bearer ${token}`,
+          },
+          withCredentials: true, // Include this if you're using cookies as well
+        });
         setJoinedCarts(response.data);
         console.log(response);
       } catch (err) {
