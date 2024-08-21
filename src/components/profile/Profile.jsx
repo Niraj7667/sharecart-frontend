@@ -51,7 +51,7 @@ const Profile = () => {
     const handleLogout = async () => {
         try {
             const token = localStorage.getItem('token'); // Retrieve token again for logout
-            await axios.post('/api/auth/logout', {}, {
+            await axios.post('https://sharecart-backend.vercel.app/api/auth/logout', {}, {
                 headers: { 
                     Authorization: `Bearer ${token}`
                 },
