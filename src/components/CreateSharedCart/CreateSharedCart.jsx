@@ -78,7 +78,7 @@ const SharedCart = () => {
         <div className={styles.invitationSection}>
           <p>Your invitation Code:</p>
           <input type="text" value={invitationLink} readOnly />
-          <button onClick={handleCopyLink}>Copy Link</button>
+          <button onClick={handleCopyLink}>Copy Code</button>
         </div>
       )}
       {error && <div className={styles.error}>{error}</div>}
