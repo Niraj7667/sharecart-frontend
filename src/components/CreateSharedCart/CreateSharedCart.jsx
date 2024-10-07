@@ -76,13 +76,13 @@ const SharedCart = () => {
       <button onClick={handleCreateCart}>Create Shared Cart</button>
       {invitationLink && (
         <div className={styles.invitationSection}>
-          <p>Your invitation link:</p>
+          <p>Your invitation Code:</p>
           <input type="text" value={invitationLink} readOnly />
           <button onClick={handleCopyLink}>Copy Link</button>
         </div>
       )}
       {error && <div className={styles.error}>{error}</div>}
-      <button onClick={handleJoinCart} className={styles.joinCartButton}>Have a Link?</button>
+      <button onClick={handleJoinCart} className={styles.joinCartButton}>Have a Code?</button>
     </div>
   );
 };
